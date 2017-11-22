@@ -2383,7 +2383,7 @@ public class TownPlan extends Frame {
         {
             public void mouseClicked(MouseEvent e)
             {
-               JOptionPane.showMessageDialog(null, "程式名稱：Town Plan\n製作群：第五團隊成員\n                  宏大、小夫、阿忠、\n                  香蕉、項羽\n\n版本：3.6+ test\n", "關於 城市規劃 V3.6+ test", 1, new ImageIcon("image/rood.gif"));
+               JOptionPane.showMessageDialog(null, "程式名稱：Town Plan\n版本：3.6+ test\n", "關於 城市規劃 V3.6+ test", 1, new ImageIcon("image/rood.gif"));
             }
             public void mouseExited(MouseEvent e)
             {
