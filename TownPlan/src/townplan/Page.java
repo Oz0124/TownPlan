@@ -3,7 +3,6 @@ package townplan;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.util.Vector;
 
 
 //頁面
@@ -21,20 +20,17 @@ public class Page extends Panel
     int x1, y1, x2=-1 ,y2=-1;
     TownPlan parent;
     MyObject activeObject=null;
-    Image back,img;
+    Image back;
     public String filename;
     Point start, stop;
     MyObject temp;
     boolean line=false;
-    Vector<MyObject> myobjects;
-    int pi,setx,sety;
-    int c=0;
-    Toolkit toolkit;
+    
 
     Page(TownPlan op)
     {
         parent = op;
-        toolkit=Toolkit.getDefaultToolkit();
+        Toolkit toolkit=Toolkit.getDefaultToolkit();
         //back=toolkit.getImage("background/green.jpg");
         this.setBackground(Color.GREEN);
         this.setLayout(null);
@@ -130,14 +126,11 @@ public class Page extends Panel
                     if((stop.x!=start.x)&&(stop.y!=start.y))
                     {
                         Page.this.add(temp);
-                        Page.this.myobjects.add(temp);
                         temp.show8Points();
                         start.x=0;
                         start.y=0;
                         stop.x=0;
                         stop.y=0;
-                        
-                        c++;
                         update();
                     }
                   
@@ -247,172 +240,6 @@ public class Page extends Panel
             for(int j=0;j<=parent.getWidth();j=j+30){
                 g.setColor(Color.BLACK);
                 g.drawLine(j,0,j,parent.getHeight());
-            }
-        }
-        if(line==false)
-        {
-            for(int h=0;h<c;h++)
-            {
-                pi=myobjects.get(h).npic;
-                setx=myobjects.get(h).setx;
-                sety=myobjects.get(h).sety;
-                if(pi==1)
-                {
-                    img=toolkit.getImage("image/1.gif");
-                }
-                else if(pi==2)
-                {
-                    img=toolkit.getImage("image/2.gif");
-                }
-                else if(pi==3)
-                {
-                    img=toolkit.getImage("image/3.gif");
-                }
-                else if(pi==4)
-                {
-                    img=toolkit.getImage("image/4.gif");
-                }
-                else if(pi==5)
-                {
-                    img=toolkit.getImage("image/5.gif");
-                }
-                else if(pi==6)
-                {
-                    img=toolkit.getImage("image/6.gif");
-                }
-                else if(pi==7)
-                {
-                    img=toolkit.getImage("image/7.gif");
-                }
-                else if(pi==8)
-                {
-                    img=toolkit.getImage("image/8.gif");
-                }
-                else if(pi==9)
-                {
-                    img=toolkit.getImage("image/9.gif");
-                }
-                else if(pi==10)
-                {
-                    img=toolkit.getImage("image/10.gif");
-                }
-                else if(pi==11)
-                {
-                    img=toolkit.getImage("image/11.gif");
-                }
-                else if(pi==12)
-                {
-                    img=toolkit.getImage("image/12.gif");
-                }
-                else if(pi == 13)
-                {
-                    img=toolkit.getImage("image/13.gif");
-                }
-                else if(pi==14)
-                {
-                    img=toolkit.getImage("image/14.gif");
-                }
-                else if(pi==15)
-                {
-                    img=toolkit.getImage("image/15.gif");
-                }
-                else if(pi==16)
-                {
-                    img=toolkit.getImage("image/16.gif");
-                }
-                else if(pi==17)
-                {
-                    img=toolkit.getImage("image/17.gif");
-                }
-                else if(pi==18)
-                {
-                    img=toolkit.getImage("image/18.gif");
-                }
-                else if(pi==19)
-                {
-                    img=toolkit.getImage("image/19.gif");
-                }
-                else if(pi==20)
-                {
-                    img=toolkit.getImage("image/20.gif");
-                }
-                else if(pi==21)
-                {
-                    img=toolkit.getImage("image/21.gif");
-                }
-                else if(pi==22)
-                {
-                    img=toolkit.getImage("image/22.gif");
-                }
-                else if(pi==23)
-                {
-                    img=toolkit.getImage("image/23.gif");
-                }
-                else if(pi==24)
-                {
-                    img=toolkit.getImage("image/24.gif");
-                }
-                else if(pi == 25)
-                {
-                    img=toolkit.getImage("image/25.gif");
-                }
-                else if(pi==26)
-                {
-                    img=toolkit.getImage("image/26.gif");
-                }
-                else if(pi==27)
-                {
-                    img=toolkit.getImage("image/27.gif");
-                }
-                else if(pi==28)
-                {
-                    img=toolkit.getImage("image/28.gif");
-                }
-                else if(pi==29)
-                {
-                    img=toolkit.getImage("image/29.gif");
-                }
-                else if(pi==30)
-                {
-                    img=toolkit.getImage("image/30.gif");
-                }
-                else if(pi==31)
-                {
-                    img=toolkit.getImage("image/31.gif");
-                }
-                else if(pi==32)
-                {
-                    img=toolkit.getImage("image/32.gif");
-                }
-                else if(pi == 33)
-                {
-                    img=toolkit.getImage("image/33.gif");
-                }
-                else if(pi==34)
-                {
-                    img=toolkit.getImage("image/34.gif");
-                }
-                else if(pi==35)
-                {
-                    img=toolkit.getImage("image/35.gif");
-                }
-                else if(pi==36)
-                {
-                    img=toolkit.getImage("image/36.gif");
-                }
-                else if(pi==37)
-                {
-                    img=toolkit.getImage("image/37.gif");
-                }
-                else if(pi==38)
-                {
-                    img=toolkit.getImage("image/38.gif");
-                }
-                else if(pi==39)
-                {
-                    img=parent.objectImage;
-                }
-                g.drawImage(img, setx,sety,myobjects.get(h).w,myobjects.get(h).h,this);
             }
         }
     }

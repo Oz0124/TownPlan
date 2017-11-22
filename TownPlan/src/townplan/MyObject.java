@@ -23,8 +23,6 @@ public class MyObject extends Panel
     Image img;
     int npic;
     boolean canmove;
-    int setx,sety;
-    int w,h;
 
 
     public enum State
@@ -42,10 +40,6 @@ public class MyObject extends Panel
             parent.start.y= oy;
             parent.stop.x=ox+getWidth();
             parent.stop.y=oy+getHeight();
-            setx=parent.start.x;
-            sety=parent.start.y;
-            w=parent.stop.x-parent.start.x;
-            h=parent.stop.y-parent.start.y;
             parent.update();
             parent.setVisible(true);
         }
@@ -161,8 +155,6 @@ public class MyObject extends Panel
                 parent.start.y=parent.stop.y-30;
             }
         }
-        setx=parent.start.x;
-        sety=parent.start.y;
         parent.update();
         parent.setVisible(true);
     }
@@ -409,8 +401,6 @@ public class MyObject extends Panel
     MyObject(Page p,int pic)
     {
         //this.setBackground(Color.red);
-        setx=this.getX();
-        sety=this.getY();
         npic=pic;
         epE = new Panel();
         epW = new Panel();
